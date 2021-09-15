@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+
+.menuOver{
+	z-index:100;
+	width: 20px;
+	height: 100vh;
+	position:fixed;
+	top:0;
+	left:0;
+	line-height: 22px;
+	
+}
+
+.menuOver:hover > .menuWrap{
+	width:300px;
+	opacity:1;
+	transition:width 0s 0ms, opacity 400ms 0ms;
+}
+
+.menuOver > .menuWrap{
+	width:0px;
+	height: 100vh;
+	background:white;
+	transition:width 0ms 300ms, opacity 300ms 0ms;
+	overflow:hidden;
+	opacity: 0;
+	font-size: 18px;
+}
+
+.menuOver > .menuWrap > ul,li{
+	list-style-type: none;
+}
+
+.menuOver > .menuWrap > .lists{
+	padding:0;
+}
+
+
+.menuOver > .menuWrap > .lists > .list{
+	font-weight: bold;
+	margin-bottom:10px;
+}
+
+.menuOver > .menuWrap > .lists > .list > h3{
+	margin-bottom:0px;
+	padding-left:15px
+}
+
+.menuOver > .menuWrap > .lists > .list:hover{
+	cursor: pointer;
+	background:#ccc;
+}
+
+.menuOver > .menuWrap > .lists > .list > .items{
+	padding-left:0px;
+}
+
+.menuOver > .menuWrap > .lists > .list > .items > .item{
+	height:22px;
+	margin:3px 0;
+}
+
+.menuOver > .menuWrap > .lists > .list > .items > .item:hover{
+	cursor:pointer;
+	background:#eee;
+}
+
+.menuOver > .menuWrap > .lists > .list > .items > .item > h5{
+	font-size:0.9rem;
+	padding-left:30px;
+	margin:0px;
+}

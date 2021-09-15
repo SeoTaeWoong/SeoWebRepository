@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.mainWrap{
+	width: 80%;
+	height:auto;
+	background:	#eee;
+	margin: 0 auto;
+}
+
+.mainWrap > .projectWrap{
+	width:90%;
+	height:auto;
+	margin:0 auto;
+	padding-top: 20px;
+	font-size:18px;
+}
+
+
+.mainWrap > .projectWrap > li > .projectList{
+	margin-top:10px;
+	display:grid;
+	grid-template-columns : repeat(auto-fill, minmax(24%, auto));
+	grid-template-rows: repeat(2, minmax(300px,auto));
+	grid-auto-flow: dense;
+	align-items: stretch;
+	row-gap: 10px;column-gap:20px;
+}
+
+.mainWrap > .projectWrap > li > .projectList > .projectItem{
+	background: #ccc;
+}

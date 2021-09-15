@@ -1,0 +1,25 @@
+@charset "UTF-8";
+body{
+    background-size: 10px, 30px, 10px 10px, 30px 30px;
+    background-image: linear-gradient(90deg, #ffffff04 10px, transparent 1px), 
+    linear-gradient(90deg, #ffffff04 10px, transparent 1px), 
+    linear-gradient(#ffffff04 10px, transparent 1px), 
+    linear-gradient(#ffffff04 10px, transparent 1px);
+    background-color: rgba(0, 0, 0, 0.9);
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -webkit-tap-highlight-color:transparent;
+    overflow-x: hidden;
+    font-size: 0;
+}
+#container{
+    width:100vw;
+    margin:0 auto;
+    height:auto;
+}
+
+@media screen and (min-width:1900px) {
+    #container{
+        width:1900px;
+    }
+}

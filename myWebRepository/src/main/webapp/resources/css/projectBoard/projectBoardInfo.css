@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.mainWrap{
+	width: 80%;
+	height:auto;
+	background:	#eee;
+	margin: 0 auto;
+}
+
+.mainWrap > .projectInfoWrap{
+	display:grid;
+	width:90%;
+	margin:0 auto;
+	padding:80px 0;
+	grid-template-areas:
+						"mainImg mainImg info info info info"
+						"subImg subImg subImg subImg subImg subImg"
+						"video video video video docs docs"
+						"review review review review review review";
+	grid-template-columns: repeat(auto-fill, minmax(14%,auto));
+	grid-template-rows: 400px 200px 500px 300px; /* 각 열(가로줄)의 길이 */	
+	gap: 10px; /* 자식요소간의 간격 */
+}
+
+.mainWrap > .projectInfoWrap > *{
+	width:100%;
+	height:100%;
+	background:#ffc;
+}
+.mainWrap > .projectInfoWrap > .mainImgArea{
+	grid-area:mainImg;
+}
+
+.mainWrap > .projectInfoWrap > .mainImgArea > img{
+	display: block;
+	width: 90%;
+	height:100%;
+	border: 1px solid black; 	
+}
+
+
+.mainWrap > .projectInfoWrap > .infoArea{		
+	grid-area: info;
+	font-size:26px;
+}
+
+.mainWrap > .projectInfoWrap > .infoArea > li{		
+	width:80%;
+	height:80px;
+	margin:30px auto;
+}
+
+.mainWrap > .projectInfoWrap > .infoArea > li:nth-child(1){		
+	height:30px;
+	text-align:center;
+}
+
+.mainWrap > .projectInfoWrap > #carouselArea{
+	grid-area: subImg;
+	overflow:hidden;
+}
+
+.mainWrap > .projectInfoWrap > #carouselArea > .subImgArea > .subImg{
+	height:100%;
+	border:1px solid black;
+	box-sizing: border-box;
+}
+
+.mainWrap > .projectInfoWrap > .videoArea{
+	grid-area: video;
+}
+
+.mainWrap > .projectInfoWrap > .videoArea > video{
+	width:100%;
+	height:100%;
+}
+
+
+.mainWrap > .projectInfoWrap > .docsArea{
+	grid-area: docs;
+	font-size: 20px;
+	overflow: scroll;
+}
+
+.mainWrap > .projectInfoWrap > .reviewArea{
+	grid-area: review;
+
+}
