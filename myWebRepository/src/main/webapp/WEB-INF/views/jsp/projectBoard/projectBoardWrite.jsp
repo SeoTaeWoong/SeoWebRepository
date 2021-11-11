@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="../css/default/header.css">
 <link rel="stylesheet" href="../css/default/menuDropDown.css">
 <link rel="stylesheet" href="../css/projectBoard/projectBoardWrite.css">
-<link rel="stylesheet" href="../css/boardEditer/boardEditer.css">
 <link rel="stylesheet" href="../css/carousel/carousel.css">
+<link rel="stylesheet" href="../css/boardEditor/boardEditor.css">
 </head>
 <body>
 	<div id="container">
@@ -24,75 +24,83 @@
 			<jsp:include page="../default/menuDropDown.jsp"/>
 		</div>
 		<main class="mainWrap">
-			<div class="projectInfoWrap">
-				<figure class="mainImgArea">
-					<img class="mainImg" src="../image/NoImg.png" alt="메인 이미지" >
-					<div class="filebox">
-						<label class="mainImgBtn" for="mainImgFile">이미지 추가</label>
-						<input type="file" id="mainImgFile" accept="image/*" >
-					</div>
-				</figure>
-				<ul class="infoArea">
-					<li class="projectSubject"><span><input type="text" placeholder="제목을 입력해 주세요"></span></li>
-					<li class="projectTerm">
-						<strong>- 프로젝트 기간  -</strong>
-						<span>Start date: 
-							<input type="date"/>
-						</span>
-						
-						<span>End date: 
-							<input type="date"/>
-						</span>
-					</li>
-					<li class="technologiesUsed">
-						<strong>- 기술스택 -</strong>
-						<span class="inputArea">
-							<input type="text" placeholder="태그 입력">
-						</span>
-						<span class="technologiesTag">
-							<b>#javascript</b> <b>#html</b> <b>#css</b>
-						</span>
-					</li>
-				</ul>
-				<div class="subImgTitleArea">
-					<div class="subImgTitle">Sub IMAGE <span>(<span class="subImgCnt">0</span>/15)</span> </div>
-					<div class="subImgBtn">
-						<label for="subImgFile">이미지 추가</label>
-						<input type="file" id="subImgFile" multiple="multiple" accept="image/*">
-					</div>
-				</div>
-				<div id="carouselArea">
-					<ul id="carousel" class="subImgArea carousel">
+			<div class="docTitle">Project Template</div>
+			<ul class="projectWriteWrap">
+				<li class="btnArea">
+					<input class="submitBtn" type="button" value="submit"/>
+				</li>
+				<li class="titleArea">
+					<span class="title">Title</span>
+					<ul class="titleInputArea">
+						<li><input class="titleInput" type="text" placeholder="프로젝트 제목을 입력 해 주세요."></li>
 					</ul>
-					<div class='btn nextBtn'></div>
-					<div class='btn prevBtn'></div>
-				</div>
-				<div class="videoArea">
-					<video autoplay controls preload="metadata">
-						<source src="" type="video/ogv">
-						<source src="" type="video/mp4">
-						<source src="" type="video/webm">
-						해당 브라우저는 ogv, mp4, webm을 지원하지 않습니다.
-					</video>
-				</div>
-				<div class="docsWrap">
-					<ul class ="docsArea">
-						<li class="docs">
-							<span class="docsTitle">Docs</span> 
-							<button class="addBtn">추가</button>
+				</li>
+				<li class="mainImageArea">
+					<span class="title">Main Image</span>
+					<ul class="mainImgBtnArea">
+						<li class="mainImgBtn">
+							<label for="hiddenUploadBtn">UPLOAD</label>
+							<input id="hiddenUploadBtn" type="file">
+						</li>
+						<li class="fileArea">
+							<span>첨부 파일 : &nbsp</span>
+							<div class="fileName"> null</div>
+							<div class="fileDelBtn">
+								<div class="effect1"></div>
+								<div class="effect2"></div>
+							</div>
+						</li>
+						<li class="imgPreview">
+							<img class="mainIMG" src="">
 						</li>
 					</ul>
-				</div>
-				<div class="reviewArea">
-					<jsp:include page="../boardEditer/boardEditer.jsp"/>
-				</div>
-				<input class="complateBtn" type="button" value="작성 완료"/>
-			</div>
+				</li>
+				<li class="teams">
+					<span class="title">Team's</span>
+					<ul class="memberArea">
+						<li class="memberInsert">
+							<span>이름 :</span>
+							<input class="memberName" type="text" placeholder="이름을 입력해주세요.">
+						</li>
+						<li class="memberList">
+							<ul class="memberHeader">
+								<li class="columns">
+									<span>No</span>
+									<span>Name</span>
+									<span>역할</span>
+									<span>기여도</span>
+								</li>
+							</ul>
+							<ul class="memberBody">
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li class="projectTermArea">
+					<span class="title">ProjectTerm</span>
+					<ul>
+						<li>
+							<div>-시작일 : </div>
+							<input type="date" class="startDate">
+							<div>-종료일 :</div>
+							<input type="date" class="endDate">
+						</li>
+					</ul>
+				</li>
+				<li class="contentsArea">
+					<span class="title">Contents</span>
+					<!--<div class="addContent">단락 추가</div>-->
+					<ul class="contents">
+						<jsp:include page="../boardEditor/boardEditor.jsp"/>
+					</ul>
+				</li>
+				
+			</ul>
 		</main>
 		
 	</div>
 </body>
+<script src="../js/boardEditor/boardEditor.js" ></script>
 <script src="../js/projectBoard/projectBoardWrite.js" ></script>
-<script src="../js/carousel/carousel.js"></script>
 </html>
 

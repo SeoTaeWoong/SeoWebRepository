@@ -1,5 +1,5 @@
 window.onload=function(){
-	myCarousel(5);
+	myCarousel(5,1);
 };
 
 	

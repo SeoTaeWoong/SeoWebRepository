@@ -1,31 +1,175 @@
 @charset "UTF-8";
 
+.backColor{
+	width: 40%;
+    height: 680px;
+    background: linear-gradient(white, 70%, #c4ecff);
+    position: absolute;
+    z-index: -1;
+}
+
 .mainWrap{
-	width: 80%;
-	height:auto;
-	background:	#eee;
+	width: 100%;
+	height:500px;
+	position:absolute;
+	top:250px;
+	left:0px;
 	margin: 0 auto;
 }
 
-.mainWrap > .projectWrap{
-	width:90%;
-	height:auto;
+.mainWrap > .profile{
+    width: 400px;
+    height: 500px;
+    background: #e4f7ff;
+    margin: 0 auto;
+    font-size: 18px;
+    position: absolute;
+    top: 0px;
+    left: 20%;
+    box-shadow: -5px 5px 10px #7682ab;
+}
+
+.mainWrap > .profile > .mainImgArea{
+	width:200px;
+	height: 200px;
+	background: white;
+	display: block;
+	margin:40px auto;
+	border-radius: 100px;
+}
+
+.mainWrap > .profile > .mainImgArea > img{
+	width:inherit;
+	height: inherit;
+	border-radius: inherit;
+}
+
+
+.mainWrap > .profile > .introduce{ 
+	width:300px;
+	height:150px;
+	display: flex;
+	flex-direction: column;
 	margin:0 auto;
-	padding-top: 20px;
+	text-align: center;
+}
+
+.mainWrap > .profile > .introduce > .lastName{
+	font-size:30px;
+	font-weight: bold;
+	margin-bottom:10px;
+} 
+
+.mainWrap > .profile > .introduce > .firstName{
+	font-size:30px;
+	font-weight: bold;
+} 
+
+.mainWrap > .profile > .introduce > .effect{
+	width:40px;
+	height: 5px;
+	border-bottom: 3px solid #ff7600;
+	display: block;
+	margin:0 auto;
+}
+
+.mainWrap > .profile > .introduce > .jobTitle{
+	margin-top:20px;
+	font-size:15px;
+	font-style: italic;
+}
+
+.mainWrap > .profile > .profileFooter {
+	width:100%;
+	height:70px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+
+.mainWrap > .profile > .profileFooter > .callArea{
+	
+	width:50%;
+}
+
+.mainWrap > .profile > .profileFooter > .addrArea{
+	display:block;
+	margin:0 auto;
+	width:50%;
+}
+
+.mainWrap > .greetings{
+	width:380px;
+	height:480px;
+	margin-left: calc(20% + 400px);
+	padding:10px;
+}
+
+.mainWrap > .greetings > .mainGreetings{
+	font-size:100px;
+	font-weight:bold;
+	color:white;
+}
+
+.mainWrap > .greetings > .links{
+	padding-top:15px;
+	font-size: 28px;
+	color:white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly
+}
+
+.mainWrap > .greetings > .links > div{
+	margin: 5px 0;
+}
+
+.mainWrap > .greetings > .links > .resumeBtn{
+	margin-top:20px;
+	width:70px;
+	border-radius: 8px;
+	box-shadow: 0 0 5px #fff;
+	cursor: pointer;
 	font-size:18px;
+	line-height: 30px;
+	overflow: hidden;
+	text-align: center;
+	background: white;
+	color: black;
 }
 
-
-.mainWrap > .projectWrap > li > .projectList{
-	margin-top:10px;
-	display:grid;
-	grid-template-columns : repeat(auto-fill, minmax(24%, auto));
-	grid-template-rows: repeat(2, minmax(300px,auto));
-	grid-auto-flow: dense;
-	align-items: stretch;
-	row-gap: 10px;column-gap:20px;
+.mainWrap > .greetings > .links > .projectBtn{
+	margin-top:20px;
+	width:70px;
+	border-radius: 8px;
+	box-shadow: 0 0 5px #fff;
+	cursor:pointer;
+	font-size:18px;
+	line-height: 30px;
+	overflow: hidden;
+	text-align: center;
 }
 
-.mainWrap > .projectWrap > li > .projectList > .projectItem{
-	background: #ccc;
+.mainWrap > .greetings > .aboutMe{
+	width:100%;
+	height:200px;
+	margin-top:30px;
+	font-size:16px;
+	color:white;
+	line-height: 20px;
+}
+
+.mainWrap > .greetings > .techStack{
+	width:100%;
+	height:50px;
+	font-size:22px;
+	font-weight:bold;
+	color:white;
+}
+
+.mainWrap > .greetings > .techStack > span{
+	font-size:16px;
+	font-weight: 100;
+	margin-right: 8px;
 }

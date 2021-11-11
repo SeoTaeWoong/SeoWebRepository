@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.seo.repository.projectBoard.dao.ProjectBoardDAO">
+
+	<insert id="boardWriteInsert" parameterType="com.seo.repository.projectBoard.beans.ProjectBoardWriteDTO"
+				 useGeneratedKeys="true" 
+				 keyProperty="seq" 
+				 keyColumn="seq">
+	
+		insert into projectboard_tb 
+			values(projectboard_seq.nextval,
+				   #{subject},
+				   #{startDate},
+				   #{endDate},
+				   <foreach collection="techList" item="techList" separator="||','||">
+				   		#{techList}
+				   </foreach>,
+				   #{gitAddr},
+				   #{review},
+				   SYSDATE) 
+	</insert>
+	
+	<insert id="mainImgInsert" parameterType="java.util.Map">
+		insert into mainimglist_tb values(mainimglist_seq.nextval,
+										 #{uuid},
+										 #{originalName},
+										 #{filePath},
+										 #{pbSeq},
+										 sysdate)
+	</insert>
+	
+	<insert id="subImgInsert" parameterType="com.seo.repository.projectBoard.beans.ProjectBoardWriteDTO">
+			insert into subimglist_tb (
+				seq,
+				uuid,
+				originalName,
+				filePath,
+				pbSeq,
+				rogDate
+			)
+			select subimglist_seq.nextval, A.*
+			FROM(
+				<foreach collection="subImgListMap" item="subImgList" separator="UNION ALL">
+					select
+						#{subImgList.uuid},
+						#{subImgList.originalName},
+						#{subImgList.filePath},
+						#{seq},
+						sysdate
+					from dual
+				</foreach>
+			)A
+	</insert>
+	
+	<insert id="videoInsert" parameterType="java.util.Map">
+		insert into videolist_tb values(videolist_seq.nextval,
+										 #{uuid},
+										 #{originalName},
+										 #{filePath},
+										 #{pbSeq},
+										 sysdate)
+	</insert>
+	
+	<insert id="docsInsert" parameterType="com.seo.repository.projectBoard.beans.ProjectBoardWriteDTO">
+		insert into doclist_tb (
+			seq,
+			docSubject,
+			docContent,
+			pbSeq,
+			rogDate
+		) select doclist_seq.nextval, A.*
+		FROM(
+		<foreach collection="docsListMap" item="docsList" separator="UNION ALL">
+			select 
+   			    #{docsList.docSubject},
+			    #{docsList.docContent},
+			    #{seq},
+			    sysdate
+			from dual
+		</foreach>
+		)A
+	</insert>
+	
+	<resultMap type="com.seo.repository.projectBoard.beans.ProjectBoardListDTO" id="getProjectBoardList">
+		<result property="seq" column="seq"></result>
+		<result property="subject" column="subject"></result>
+		<result property="techStack" column="techstack"></result>
+		<result property="rogDate" column="rogdate"></result>
+		<result property="filePath" column="filepath"></result>
+	</resultMap>
+	<select id="getBoardList" parameterType="java.util.Map" resultMap="getProjectBoardList">
+		select pb.seq, pb.subject, pb.techstack, to_char(pb.rogdate, 'YYYY/MM/DD') as rogdate, ml.filepath 
+			from (select rownum as num, seq, subject, techstack, rogdate from projectboard_tb order by seq desc) pb,
+				 mainimglist_tb ml
+				 	where pb.seq = ml.pbseq and num between #{minR} and #{maxR}
+	</select>
+	
+	<select id="getTotalCnt" resultType="int">
+		select count(*) from projectboard_tb
+	</select>
+	
+	
+	
+</mapper>

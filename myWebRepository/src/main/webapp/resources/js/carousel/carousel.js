@@ -22,7 +22,6 @@ var myCarousel = function(cnt,opt){
 	let carouselGap = (carouselAreaWidth-(carouselImageWidth*cnt))/(cnt-1);
 	    carouselWidth= carouselWidth+(carouselGap*page);
 	
-	
 	const pageCheck = function(){
 		item = document.querySelectorAll(".carouselItem");
 		itemLength = item.length;

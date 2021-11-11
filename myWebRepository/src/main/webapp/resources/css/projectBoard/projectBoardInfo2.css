@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.mainWrap{
+	width: 80%;
+	height:auto;
+	margin: 160px auto;
+}
+
+.mainWrap > .projectInfoWrap{
+	display:flex;
+	flex-direction:column;
+	width:1000px;
+	margin:0 auto;
+	padding:80px 0;
+}
+
+.mainWrap > .projectInfoWrap > *{
+	width:80%;
+	height:100%;
+	border:1px solid white;
+	margin:0 auto;
+}
+
+.mainWrap > .projectInfoWrap > .mainImgArea{
+	width:80%;
+	height:400px;
+	margin:0 auto;
+}
+
+.mainWrap > .projectInfoWrap > .projectTitle{
+	font-size: 30px;
+	font-weight: bold;
+	color:white;
+	padding:20px 0;
+}
+
+.mainWrap > .projectInfoWrap > .projectMember{
+	font-size:22px;
+	color:white;
+	text-indent: 10px;
+}
+.mainWrap > .projectInfoWrap > .whiteSpace{
+	height:150px;
+}
+
+.mainWrap > .projectInfoWrap > .projectTerm{
+	font-size:24px;
+	font-weight: bold;
+	color:white;
+	text-align: right;
+}	

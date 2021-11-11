@@ -28,7 +28,7 @@
 					<img src="??.png" alt="메인 이미지">
 				</figure>
 				<ul class="infoArea">
-					<li class="projectSubject"><span><strong>JAVASCRIPT를 이용한 추억의 비행기게임</strong></span></li>
+					<li class="projectSubject"><span><strong>JAVASCRIPT를 이용한 슈팅게임</strong></span></li>
 					<li class="projectTerm">-  프로젝트 기간  -<span></span></li>
 					<li class="technologiesUsed">- 기술스택 -<span></span></li>
 				</ul>
@@ -45,15 +45,27 @@
 					<div class='btn nextBtn'></div>
 					<div class='btn prevBtn'></div>
 				</div>
-				<div class="videoArea">
-					<video autoplay controls preload="metadata">
-						<source src="" type="video/ogv">
-						<source src="" type="video/mp4">
-						<source src="" type="video/webm">
-					</video>
-				</div>
-				<div class="docsArea">
-					<ul>
+				<ul class="contentsArea">
+					<li class="contentsTab">
+						<ul>
+							<li class="tabSelec"><span>Video</span></li>
+							<li><span>Play</span></li>
+							<li class="dump"></li>
+						</ul>
+					</li>
+					<li class="contents">
+						<video autoplay controls preload="metadata">
+							<source src="" type="video/ogv">
+							<source src="" type="video/mp4">
+							<source src="" type="video/webm">
+						</video>
+					</li>
+				</ul>
+				<div class="docsWrap">
+					<ul class ="docsArea">
+						<li class="docs">
+							<span class="docsTitle">Docs</span> 
+						</li>
 						<li class="docArea">
 							<strong class="docSubject">게임 설명</strong>
 							<ul>
@@ -62,7 +74,6 @@
 									<p>사용자는 적의 탄환을 피해 보스몬스터를 죽이면 게임이 끝나게 되며</p>
 									<p>z키를 이용해 폭탄 스킬을 사용 할 수 있습니다.</p> 
 								</li>
-								<li class="docDelete">제거</li>
 							</ul>
 						</li>
 						
@@ -74,7 +85,6 @@
 									<p>사용자는 적의 탄환을 피해 보스몬스터를 죽이면 게임이 끝나게 되며</p>
 									<p>z키를 이용해 폭탄 스킬을 사용 할 수 있습니다.</p> 
 								</li>
-								<li class="docDelete">제거</li>
 							</ul>
 						</li>
 						
@@ -86,7 +96,17 @@
 									<p>사용자는 적의 탄환을 피해 보스몬스터를 죽이면 게임이 끝나게 되며</p>
 									<p>z키를 이용해 폭탄 스킬을 사용 할 수 있습니다.</p> 
 								</li>
-								<li class="docDelete">제거</li>
+							</ul>
+						</li>
+						
+						<li class="docArea">
+							<strong class="docSubject">게임 설명</strong>
+							<ul>
+								<li class="docContents">
+									<p>고전게임 비행기 슈팅게임을 모티브로 제작했습니다.</p>
+									<p>사용자는 적의 탄환을 피해 보스몬스터를 죽이면 게임이 끝나게 되며</p>
+									<p>z키를 이용해 폭탄 스킬을 사용 할 수 있습니다.</p> 
+								</li>
 							</ul>
 						</li>
 					</ul>
